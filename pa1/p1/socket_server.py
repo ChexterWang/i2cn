@@ -29,7 +29,17 @@ while(True):
                 # Ask if the client want to terminate the process
                 # Terminate the process or continue
                 # TODO start
-                ans = client.recv(1000).upper().decode('utf-8')
+                prob = client.recv(1000).decode('utf-8').split()
+                if(len(prob) == 3):
+                    ans = 
+                    {
+                        '+': lambda m,n: m+n,
+                        '-': lambda m,n: m-n,
+                        '*': lambda m,n: m*n,
+                        '/': lambda m,n: m/n
+                    }.get(prob[1], lambda m,n: print("operator not found"))(prob[0], prob[2])
+                else:
+                    print("input too long")
                 client.send(b"The answer is " + ans.encode('utf-8') + b".\nDo you have any question? (Y/N)\n")
                 if(client.recv(1000).upper() == b'N'):
                     client.close()
