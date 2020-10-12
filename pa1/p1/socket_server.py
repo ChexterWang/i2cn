@@ -30,18 +30,22 @@ while(True):
                 # Terminate the process or continue
                 # TODO start
                 prob = client.recv(1000).decode('utf-8').split()
-                if(len(prob) == 3):
-                    ans = 
-                    {
-                        '+': lambda m,n: m+n,
-                        '-': lambda m,n: m-n,
-                        '*': lambda m,n: m*n,
-                        '/': lambda m,n: m/n
-                    }.get(prob[1], lambda m,n: print("operator not found"))(prob[0], prob[2])
+                ans = "undefined"
+                if(len(prob) == 3 and prob[0].isdigit() and prob[2].isdigit()):
+                    ans = {
+                        '+': lambda m,n: str(m+n),
+                        '-': lambda m,n: str(m-n),
+                        '*': lambda m,n: str(m*n),
+                        '/': lambda m,n: str(m/n)
+                    }.get(prob[1], lambda m,n: print("operator not found"))(int(prob[0]), int(prob[2]))
                 else:
-                    print("input too long")
+                    print("input is invalid")
                 client.send(b"The answer is " + ans.encode('utf-8') + b".\nDo you have any question? (Y/N)\n")
-                if(client.recv(1000).upper() == b'N'):
+                recv = client.recv(1000).upper()
+                while(recv != b'Y' and recv != b'N'):
+                    client.send(b"Do you have any question? (Y/N)\n")
+                    recv = client.recv(1000).upper()
+                if(recv == b'N'):
                     client.close()
                     break
                 # TODO end
