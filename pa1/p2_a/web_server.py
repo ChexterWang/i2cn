@@ -8,12 +8,12 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 # TODO start
 HOST, PORT = "192.168.0.103", 1024
 serverSocket.bind((HOST, PORT))
-serverSocket.listen(0)
 # TODO in end
 while True:
     #Establish the connection
     print('Ready to serve...')
     # TODO start
+    serverSocket.listen(0)
     connectionSocket, address = serverSocket.accept()
     # TODO end
     try:
@@ -30,7 +30,7 @@ while True:
         # Read data from the file that the client requested
         # Split the data into lines for future transmission 
         # TODO start
-        outputdata = f.readlines() if f else ""
+        outputdata = f.readlines()
         f.close()
         # TODO end
         print(outputdata)
@@ -39,9 +39,9 @@ while True:
         # TODO start
         
         # send HTTP status to client
-        connectionSocket.send(b'HTTP/1.1 200 ok\r\n')
+        connectionSocket.send(b'HTTP/1.1 200 OK')
         # send content type to client
-        connectionSocket.send(b'Content-Type: text/html\r\n')
+        connectionSocket.send(b'Content-Type: text/html\n\n')
         
         # TODO end
         
@@ -54,7 +54,9 @@ while True:
     except IOError:
         #Send response message for file not found
         # TODO start
-        connectionSocket.send(b'HTTP/1.1 404 Page Not Found\r\n')
+        connectionSocket.send(b'HTTP/1.1 200 OK')
+        connectionSocket.send(b'Content-Type: text/html\n\n')
+        connectionSocket.send(b'404 Not Found')
         # TODO end
 
         #Close client socket
@@ -62,5 +64,5 @@ while True:
         connectionSocket.close()
         # TODO end
 
-        serverSocket.close()
+serverSocket.close()
 sys.exit() #Terminate the program after sending the corresponding data
