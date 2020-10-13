@@ -8,7 +8,9 @@ if len(sys.argv) <= 1:
 # Create a server socket, bind it to a port and start listening
 tcpSerSock = socket(AF_INET, SOCK_STREAM)
 # TODO start.
-
+HOST, PORT = sys.argv[1], 1024
+tcpSerSock.bind((HOST, PORT))
+tcpSerSock.listen(0)
 # TODO end.
 while 1:
 	# Strat receiving data from the client
@@ -18,7 +20,7 @@ while 1:
 
 	# Receive request from the client
 	# TODO start.
-	message = 
+	message = tcpCLiSock.recv(1000).decode('utf-8')
 	# TODO end.
 	print(message)
 	
@@ -38,7 +40,12 @@ while 1:
 		# ProxyServer finds a cache hit and generates a response message
 		# Send the file data to the client
 		# TODO start.
-		
+		tcpCliSock.send(b'HTTP/1.1 200 OK\r\n')
+        tcpCliSock.send(b'Content-Type: text/html\r\n')
+        tcpCliSock.send(b'\n')
+        for i in range(0, len(outputdata)):
+            tcpCliSock.send(outputdata[i].encode())
+        tcpCliSock.send(b'\r\n')
 		# TODO end.
 
 		print('Read from cache')
@@ -46,15 +53,15 @@ while 1:
 	except IOError:
 		if fileExist == "false":
 			# Create a socket on the proxyserver
-                        #TODO start
-			
-                        #TODO end
-                        hostn = filename.replace("www.","",1)
+            #TODO start
+            c = socket(AF_INET, SOCK_STREAM)   
+            #TODO end
+            hostn = filename.replace("www.","",1)
 			print(hostn)
 			try:
 				# Connect to the socket to webserver port 
 				# TODO start.
-				
+				c.connect((hostn, 80))
 				# TODO end.
 
 				# Create a temporary file on this socket and ask webserver port for the file requested by the client
@@ -64,25 +71,29 @@ while 1:
 
 				# Read the response into buffer
 				# TODO start.
-				
+				buff = fileobj.readlines()
 				# TODO end.
 
 				# Create a new file in the cache for the requested file.
 				# Also send the response in the buffer to client socket and the corresponding file in the cache
 				tmpFile = open(filename,"w")
 				# TODO start.
-				
+				for i in buff:
+                    tmpFile.write(i)
+                    tcpCliSock.send(i.encode())
+                c.close()
+                tmpFile.close()
 				# TODO end.
 			except:
 				print("Illegal request")
 		else:
 			# HTTP response message for file not found
 			# TODO start.
-			
-                        # TODO end.
+			tcpCliSock.send("404 Not Found")
+            # TODO end.
 	# Close the client sockets
 	tcpCliSock.close()
 # Close the server socket
 # TODO start.
-
+tcpSerSock.close()
 # TODO end.
