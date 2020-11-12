@@ -1,0 +1,346 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+the number of messages to simulate: 20
+packet loss probability: 0.100000
+packet corruption probability: 0.000000
+average time between messages from sender's layer5: 10.000000
+TRACE: 2
+
+EVENT time: 18.705740,  type: 1, fromlayer5  entity: 0
+[A] seqnum=1, acknum=-1, checksum=1843, data=aaaaaaaaaaaaaaaaaaa
+[A] base=1, seqnum=2
+
+EVENT time: 24.170835,  type: 2, fromlayer3  entity: 1
+[B] ack 1 sent
+[B] message aaaaaaaaaaaaaaaaaaa delivered
+
+EVENT time: 29.402449,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=1, base=1
+
+EVENT time: 35.124840,  type: 1, fromlayer5  entity: 0
+[A] seqnum=2, acknum=-1, checksum=1863, data=bbbbbbbbbbbbbbbbbbb
+[A] base=2, seqnum=3
+
+EVENT time: 37.145336,  type: 2, fromlayer3  entity: 1
+[B] ack 2 sent
+[B] message bbbbbbbbbbbbbbbbbbb delivered
+
+EVENT time: 41.612602,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=2, base=2
+
+EVENT time: 52.094032,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+[A] seqnum=3, acknum=-1, checksum=1883, data=ccccccccccccccccccc
+[A] base=3, seqnum=4
+
+EVENT time: 60.917324,  type: 1, fromlayer5  entity: 0
+[A] seqnum=4, acknum=-1, checksum=1903, data=ddddddddddddddddddd
+[A] base=3, seqnum=5
+
+EVENT time: 66.189552,  type: 2, fromlayer3  entity: 1
+[B] ack 4 sent
+[B] packet 4 buffered
+
+EVENT time: 69.502670,  type: 1, fromlayer5  entity: 0
+[A] seqnum=5, acknum=-1, checksum=1923, data=eeeeeeeeeeeeeeeeeee
+[A] base=3, seqnum=6
+
+EVENT time: 70.392197,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=4, base=3
+
+EVENT time: 77.157211,  type: 2, fromlayer3  entity: 1
+[B] ack 5 sent
+[B] packet 5 buffered
+
+EVENT time: 80.570114,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=5, base=3
+
+EVENT time: 82.094032,  type: 0, timerinterrupt   entity: 0
+[A] timeout(3)
+          TOLAYER3: packet being lost
+
+EVENT time: 87.321922,  type: 1, fromlayer5  entity: 0
+[A] seqnum=6, acknum=-1, checksum=1943, data=fffffffffffffffffff
+[A] base=3, seqnum=7
+
+EVENT time: 89.103027,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+[A] seqnum=7, acknum=-1, checksum=1963, data=ggggggggggggggggggg
+[A] base=3, seqnum=8
+
+EVENT time: 93.570938,  type: 2, fromlayer3  entity: 1
+[B] ack 6 sent
+[B] packet 6 buffered
+
+EVENT time: 99.408905,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=6, base=3
+
+EVENT time: 102.884880,  type: 1, fromlayer5  entity: 0
+[A] seqnum=8, acknum=-1, checksum=1983, data=hhhhhhhhhhhhhhhhhhh
+[A] base=3, seqnum=9
+
+EVENT time: 104.760071,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+[B] ack 8 sent
+[B] packet 8 buffered
+
+EVENT time: 112.094032,  type: 0, timerinterrupt   entity: 0
+[A] timeout(3)
+
+EVENT time: 113.400421,  type: 2, fromlayer3  entity: 1
+[B] ack 3 sent
+[B] message ccccccccccccccccccc delivered
+[B] message ddddddddddddddddddd delivered
+[B] message eeeeeeeeeeeeeeeeeee delivered
+[B] message fffffffffffffffffff delivered
+
+EVENT time: 114.797554,  type: 1, fromlayer5  entity: 0
+[A] seqnum=9, acknum=-1, checksum=2003, data=iiiiiiiiiiiiiiiiiii
+[A] base=3, seqnum=10
+
+EVENT time: 118.657585,  type: 1, fromlayer5  entity: 0
+[A] seqnum=10, acknum=-1, checksum=2023, data=jjjjjjjjjjjjjjjjjjj
+[A] base=3, seqnum=11
+
+EVENT time: 118.979034,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=3, base=3
+
+EVENT time: 119.103027,  type: 0, timerinterrupt   entity: 0
+[A] timeout(7)
+
+EVENT time: 119.794250,  type: 1, fromlayer5  entity: 0
+[A] seqnum=11, acknum=-1, checksum=2043, data=kkkkkkkkkkkkkkkkkkk
+[A] base=7, seqnum=12
+
+EVENT time: 121.047485,  type: 2, fromlayer3  entity: 1
+[B] ack 9 sent
+[B] packet 9 buffered
+
+EVENT time: 125.866768,  type: 2, fromlayer3  entity: 1
+[B] ack 10 sent
+[B] packet 10 buffered
+
+EVENT time: 130.438904,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=9, base=7
+
+EVENT time: 132.460968,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=10, base=7
+
+EVENT time: 132.884888,  type: 0, timerinterrupt   entity: 0
+[A] timeout(8)
+
+EVENT time: 133.391754,  type: 1, fromlayer5  entity: 0
+[A] seqnum=12, acknum=-1, checksum=2063, data=lllllllllllllllllll
+[A] base=7, seqnum=13
+
+EVENT time: 135.262848,  type: 2, fromlayer3  entity: 1
+[B] ack 7 sent
+[B] message ggggggggggggggggggg delivered
+[B] message hhhhhhhhhhhhhhhhhhh delivered
+[B] message iiiiiiiiiiiiiiiiiii delivered
+[B] message jjjjjjjjjjjjjjjjjjj delivered
+
+EVENT time: 135.814606,  type: 1, fromlayer5  entity: 0
+[A] seqnum=13, acknum=-1, checksum=2083, data=mmmmmmmmmmmmmmmmmmm
+[A] base=7, seqnum=14
+
+EVENT time: 141.954193,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=7, base=7
+
+EVENT time: 144.156952,  type: 1, fromlayer5  entity: 0
+[A] seqnum=14, acknum=-1, checksum=2103, data=nnnnnnnnnnnnnnnnnnn
+[A] base=8, seqnum=15
+
+EVENT time: 144.173630,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+[B] ack 11 sent
+[B] message kkkkkkkkkkkkkkkkkkk delivered
+
+EVENT time: 147.070892,  type: 2, fromlayer3  entity: 1
+[B] ack 8 sent
+[B] packet 8 buffered
+
+EVENT time: 148.594604,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=8, base=8
+
+EVENT time: 149.183624,  type: 2, fromlayer3  entity: 1
+[B] ack 12 sent
+[B] message lllllllllllllllllll delivered
+
+EVENT time: 149.794250,  type: 0, timerinterrupt   entity: 0
+[A] timeout(11)
+
+EVENT time: 151.666000,  type: 2, fromlayer3  entity: 1
+[B] ack 13 sent
+[B] message mmmmmmmmmmmmmmmmmmm delivered
+
+EVENT time: 155.232727,  type: 1, fromlayer5  entity: 0
+[A] seqnum=15, acknum=-1, checksum=2123, data=ooooooooooooooooooo
+[A] base=11, seqnum=16
+
+EVENT time: 158.618118,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=12, base=11
+
+EVENT time: 160.995010,  type: 2, fromlayer3  entity: 1
+[B] ack 14 sent
+[B] message nnnnnnnnnnnnnnnnnnn delivered
+
+EVENT time: 165.814606,  type: 0, timerinterrupt   entity: 0
+[A] timeout(13)
+
+EVENT time: 167.892380,  type: 1, fromlayer5  entity: 0
+[A] seqnum=16, acknum=-1, checksum=2143, data=ppppppppppppppppppp
+[A] base=11, seqnum=17
+
+EVENT time: 168.466095,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=13, base=11
+
+EVENT time: 169.820908,  type: 2, fromlayer3  entity: 1
+[B] ack 11 sent
+[B] packet 11 buffered
+
+EVENT time: 174.156952,  type: 0, timerinterrupt   entity: 0
+[A] timeout(14)
+          TOLAYER3: packet being lost
+
+EVENT time: 175.081772,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=14, base=11
+
+EVENT time: 175.323868,  type: 2, fromlayer3  entity: 1
+[B] ack 15 sent
+[B] message ooooooooooooooooooo delivered
+
+EVENT time: 178.630890,  type: 2, fromlayer3  entity: 1
+[B] ack 13 sent
+[B] packet 13 buffered
+
+EVENT time: 179.579651,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+[A] seqnum=17, acknum=-1, checksum=2163, data=qqqqqqqqqqqqqqqqqqq
+[A] base=11, seqnum=18
+
+EVENT time: 179.794250,  type: 0, timerinterrupt   entity: 0
+[A] timeout(11)
+
+EVENT time: 180.144989,  type: 2, fromlayer3  entity: 1
+[B] ack 16 sent
+[B] message ppppppppppppppppppp delivered
+
+EVENT time: 180.982727,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=11, base=11
+
+EVENT time: 182.977158,  type: 1, fromlayer5  entity: 0
+[A] seqnum=18, acknum=-1, checksum=2183, data=rrrrrrrrrrrrrrrrrrr
+[A] base=15, seqnum=19
+
+EVENT time: 185.206009,  type: 1, fromlayer5  entity: 0
+[A] seqnum=19, acknum=-1, checksum=2203, data=sssssssssssssssssss
+[A] base=15, seqnum=20
+
+EVENT time: 185.232727,  type: 0, timerinterrupt   entity: 0
+[A] timeout(15)
+
+EVENT time: 185.344620,  type: 1, fromlayer5  entity: 0
+[A] seqnum=20, acknum=-1, checksum=2223, data=ttttttttttttttttttt
+[A] base=15, seqnum=21
+
+EVENT time: 185.392120,  type: 2, fromlayer3  entity: 1
+[B] ack 11 sent
+[B] packet 11 buffered
+
+EVENT time: 189.805847,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=15, base=15
+
+EVENT time: 194.714569,  type: 2, fromlayer3  entity: 1
+[B] ack 18 sent
+[B] packet 18 buffered
+
+EVENT time: 196.586823,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 197.710953,  type: 2, fromlayer3  entity: 1
+[B] ack 19 sent
+[B] packet 19 buffered
+
+EVENT time: 197.892380,  type: 0, timerinterrupt   entity: 0
+[A] timeout(16)
+
+EVENT time: 205.530563,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=16, base=16
+
+EVENT time: 205.966614,  type: 2, fromlayer3  entity: 1
+[B] ack 15 sent
+[B] packet 15 buffered
+
+EVENT time: 209.579651,  type: 0, timerinterrupt   entity: 0
+[A] timeout(17)
+
+EVENT time: 212.977158,  type: 0, timerinterrupt   entity: 0
+[A] timeout(18)
+
+EVENT time: 214.653259,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 214.991287,  type: 2, fromlayer3  entity: 1
+[B] ack 20 sent
+[B] packet 20 buffered
+
+EVENT time: 215.206009,  type: 0, timerinterrupt   entity: 0
+[A] timeout(19)
+
+EVENT time: 215.344620,  type: 0, timerinterrupt   entity: 0
+[A] timeout(20)
+
+EVENT time: 219.891525,  type: 2, fromlayer3  entity: 1
+[B] ack 16 sent
+[B] packet 16 buffered
+
+EVENT time: 222.165558,  type: 2, fromlayer3  entity: 1
+[B] ack 17 sent
+[B] message qqqqqqqqqqqqqqqqqqq delivered
+[B] message rrrrrrrrrrrrrrrrrrr delivered
+[B] message sssssssssssssssssss delivered
+[B] message ttttttttttttttttttt delivered
+
+EVENT time: 222.599075,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=18, base=17
+
+EVENT time: 223.762039,  type: 2, fromlayer3  entity: 1
+[B] ack 18 sent
+[B] packet 18 buffered
+
+EVENT time: 227.325867,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=19, base=17
+
+EVENT time: 228.633713,  type: 2, fromlayer3  entity: 1
+[B] ack 19 sent
+[B] packet 19 buffered
+
+EVENT time: 235.172943,  type: 2, fromlayer3  entity: 1
+[B] ack 20 sent
+[B] packet 20 buffered
+
+EVENT time: 237.064575,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 239.579651,  type: 0, timerinterrupt   entity: 0
+[A] timeout(17)
+
+EVENT time: 240.782791,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=20, base=17
+
+EVENT time: 244.890533,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 249.293793,  type: 2, fromlayer3  entity: 1
+[B] ack 17 sent
+[B] packet 17 buffered
+
+EVENT time: 252.171982,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=17, base=17
+
+EVENT time: 257.055450,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 261.069824,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 268.462189,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 274.944794,  type: 2, fromlayer3  entity: 0
+ Simulator terminated at time 274.944794
+ after sending 20 msgs from layer5

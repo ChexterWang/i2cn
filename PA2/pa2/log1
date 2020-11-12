@@ -1,0 +1,119 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+the number of messages to simulate: 10
+packet loss probability: 0.000000
+packet corruption probability: 0.000000
+average time between messages from sender's layer5: 10.000000
+TRACE: 2
+
+EVENT time: 18.705740,  type: 1, fromlayer5  entity: 0
+[A] seqnum=1, acknum=-1, checksum=1843, data=aaaaaaaaaaaaaaaaaaa
+[A] base=1, seqnum=2
+
+EVENT time: 24.170835,  type: 2, fromlayer3  entity: 1
+[B] ack 1 sent
+[B] message aaaaaaaaaaaaaaaaaaa delivered
+
+EVENT time: 29.402449,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=1, base=1
+
+EVENT time: 35.124840,  type: 1, fromlayer5  entity: 0
+[A] seqnum=2, acknum=-1, checksum=1863, data=bbbbbbbbbbbbbbbbbbb
+[A] base=2, seqnum=3
+
+EVENT time: 37.145336,  type: 2, fromlayer3  entity: 1
+[B] ack 2 sent
+[B] message bbbbbbbbbbbbbbbbbbb delivered
+
+EVENT time: 41.612602,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=2, base=2
+
+EVENT time: 52.094032,  type: 1, fromlayer5  entity: 0
+[A] seqnum=3, acknum=-1, checksum=1883, data=ccccccccccccccccccc
+[A] base=3, seqnum=4
+
+EVENT time: 56.957436,  type: 2, fromlayer3  entity: 1
+[B] ack 3 sent
+[B] message ccccccccccccccccccc delivered
+
+EVENT time: 60.917324,  type: 1, fromlayer5  entity: 0
+[A] seqnum=4, acknum=-1, checksum=1903, data=ddddddddddddddddddd
+[A] base=3, seqnum=5
+
+EVENT time: 63.255848,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=3, base=3
+
+EVENT time: 68.034302,  type: 1, fromlayer5  entity: 0
+[A] seqnum=5, acknum=-1, checksum=1923, data=eeeeeeeeeeeeeeeeeee
+[A] base=4, seqnum=6
+
+EVENT time: 69.935989,  type: 2, fromlayer3  entity: 1
+[B] ack 4 sent
+[B] message ddddddddddddddddddd delivered
+
+EVENT time: 71.719910,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=4, base=4
+
+EVENT time: 72.302330,  type: 2, fromlayer3  entity: 1
+[B] ack 5 sent
+[B] message eeeeeeeeeeeeeeeeeee delivered
+
+EVENT time: 78.551346,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=5, base=5
+
+EVENT time: 82.822174,  type: 1, fromlayer5  entity: 0
+[A] seqnum=6, acknum=-1, checksum=1943, data=fffffffffffffffffff
+[A] base=6, seqnum=7
+
+EVENT time: 88.162384,  type: 2, fromlayer3  entity: 1
+[B] ack 6 sent
+[B] message fffffffffffffffffff delivered
+
+EVENT time: 94.523087,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=6, base=6
+
+EVENT time: 96.604027,  type: 1, fromlayer5  entity: 0
+[A] seqnum=7, acknum=-1, checksum=1963, data=ggggggggggggggggggg
+[A] base=7, seqnum=8
+
+EVENT time: 97.662491,  type: 2, fromlayer3  entity: 1
+[B] ack 7 sent
+[B] message ggggggggggggggggggg delivered
+
+EVENT time: 98.548904,  type: 1, fromlayer5  entity: 0
+[A] seqnum=8, acknum=-1, checksum=1983, data=hhhhhhhhhhhhhhhhhhh
+[A] base=7, seqnum=9
+
+EVENT time: 101.285919,  type: 2, fromlayer3  entity: 1
+[B] ack 8 sent
+[B] message hhhhhhhhhhhhhhhhhhh delivered
+
+EVENT time: 102.584366,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=7, base=7
+
+EVENT time: 104.340042,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=8, base=8
+
+EVENT time: 108.723610,  type: 1, fromlayer5  entity: 0
+[A] seqnum=9, acknum=-1, checksum=2003, data=iiiiiiiiiiiiiiiiiii
+[A] base=9, seqnum=10
+
+EVENT time: 111.601448,  type: 2, fromlayer3  entity: 1
+[B] ack 9 sent
+[B] message iiiiiiiiiiiiiiiiiii delivered
+
+EVENT time: 115.178009,  type: 1, fromlayer5  entity: 0
+[A] seqnum=10, acknum=-1, checksum=2023, data=jjjjjjjjjjjjjjjjjjj
+[A] base=9, seqnum=11
+
+EVENT time: 115.263214,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=9, base=9
+
+EVENT time: 124.088791,  type: 2, fromlayer3  entity: 1
+[B] ack 10 sent
+[B] message jjjjjjjjjjjjjjjjjjj delivered
+
+EVENT time: 133.480209,  type: 2, fromlayer3  entity: 0
+[A] packet.seqnum=0, acknum=10, base=10
+ Simulator terminated at time 133.480209
+ after sending 10 msgs from layer5
